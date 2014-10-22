@@ -3,6 +3,7 @@ Capybara::Minitest
 
 [![Gem Version](https://badge.fury.io/rb/capybara-minitest.svg)](http://badge.fury.io/rb/capybara-minitest)
 [![Build Status](https://travis-ci.org/decafdennis/capybara-minitest.svg?branch=master)](https://travis-ci.org/decafdennis/capybara-minitest)
+[![Code Climate](https://codeclimate.com/github/decafdennis/capybara-minitest/badges/gpa.svg)](https://codeclimate.com/github/decafdennis/capybara-minitest)
 
 If you're using `Minitest::Test` with the `Capybara::DSL` for your tests, this
 gem will allow you to do:
