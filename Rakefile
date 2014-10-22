@@ -11,4 +11,4 @@ RuboCop::RakeTask.new
 
 load 'lib/capybara/minitest/assertions/rdoc.rake'
 
-task :default => :test
+task default: :test

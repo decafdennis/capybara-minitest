@@ -1,6 +1,7 @@
 require 'test_helper'
 require 'capybara/minitest/assertions'
 
+# Tests assertions using the Hello World Rack app.
 class AssertionsTest < Minitest::Test
   include Capybara::DSL
   include Capybara::Minitest::Assertions
@@ -17,7 +18,7 @@ class AssertionsTest < Minitest::Test
     begin
       assert_has_text page, 'Bye World'
     rescue Minitest::Assertion => e
-      assert_match /^expected\b/i, e.message
+      assert_match(/^expected\b/i, e.message)
     end
   end
 
@@ -27,7 +28,7 @@ class AssertionsTest < Minitest::Test
     begin
       assert_has_text page, 'Bye World', 'custom'
     rescue Minitest::Assertion => e
-      assert_match /^custom\b.+expected\b/im, e.message
+      assert_match(/^custom\b.+expected\b/im, e.message)
     end
   end
 
@@ -37,7 +38,9 @@ class AssertionsTest < Minitest::Test
     begin
       assert_has_text page, 'Bye World'
     rescue Minitest::Assertion => e
-      refute e.backtrace.any? { |item| item.match(/capybara\/minitest\/assertions/) }
+      refute e.backtrace.any? { |item|
+        item.include?('capybara/minitest/assertions')
+      }
     end
   end
 end

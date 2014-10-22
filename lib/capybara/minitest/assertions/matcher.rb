@@ -3,18 +3,20 @@ require 'capybara/rspec/matchers'
 module Capybara
   module Minitest
     module Assertions
+      # Represents one of the Capybara RSpec matchers.
       class Matcher
         include Capybara::RSpecMatchers
 
-        # Returns an array of matchers representing the recognized Capybara RSpec
-        # matchers.
+        # Returns an array of matchers representing the recognized Capybara
+        # RSpec matchers.
         def self.all
           Capybara::RSpecMatchers.public_instance_methods.map do |matcher_name|
             new(matcher_name) if recognizes_name?(matcher_name)
           end.compact
         end
 
-        # Determines whether the given RSpec matcher is recognized by this class.
+        # Determines whether the given RSpec matcher is recognized by this
+        # class.
         def self.recognizes_name?(name)
           name.to_s.match(/^have_/)
         end
@@ -22,7 +24,10 @@ module Capybara
         attr_reader :name
 
         def initialize(name)
-          raise ArgumentError.new('Unrecognized matcher name.') unless self.class.recognizes_name?(name)
+          unless self.class.recognizes_name?(name)
+            fail ArgumentError, 'Unrecognized matcher name.'
+          end
+
           @name = name.to_s
         end
 
@@ -34,18 +39,16 @@ module Capybara
         # arguments. This is what would be returned by have_text('Foo'), for
         # example.
         def matcher(*args)
-          self.send(@name, *args)
+          send(@name, *args)
         end
 
         # Returns a new array of assertions for this matcher.
         def assertions
-          [
-              MatcherAssertion.new(self),
-              MatcherRefutation.new(self),
-          ]
+          [MatcherAssertion.new(self), MatcherRefutation.new(self)]
         end
       end
 
+      # Represents an assertion based on a Capybara RSpec matcher.
       class MatcherAssertion
         attr_reader :matcher
 
@@ -83,6 +86,7 @@ module Capybara
         end
       end
 
+      # Represents a refutation based on a Capybara RSpec matcher.
       class MatcherRefutation < MatcherAssertion
         protected
 

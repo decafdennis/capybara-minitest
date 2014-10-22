@@ -1,5 +1,5 @@
-# This file is auto-generated. Use $ rake lib/capybara/minitest/assertions/rdoc.rb
-# to regenerate.
+# This file is auto-generated. To regenerate:
+# $ rake lib/capybara/minitest/assertions/rdoc.rb
 
 module Capybara
   module Minitest

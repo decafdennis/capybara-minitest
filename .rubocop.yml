@@ -1,0 +1,25 @@
+inherit_from: .rubocop_todo.yml
+
+Metrics/LineLength:
+  Exclude:
+    # Allow long description.
+    - '*.gemspec'
+
+Style/FileName:
+  Exclude:
+    # Ignore non-functional modules.
+    - lib/capybara-minitest.rb
+    - lib/capybara-minitest/version.rb
+
+Style/Documentation:
+  Exclude:
+    # Ignore non-functional modules.
+    - lib/capybara-minitest.rb
+    - lib/capybara-minitest/version.rb
+
+Lint/RescueException:
+  Exclude:
+    # We actually do have to rescue Exception, because that's what assertion
+    # failures inherit from, and we don't know whether it's the minitest gem or
+    # the standard library in Ruby 2.
+    - lib/capybara/minitest/assertions.rb

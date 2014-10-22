@@ -8,13 +8,14 @@ OUTPUT_FILE = "#{BASE_FILE}.rb"
 module Capybara
   module Minitest
     module Assertions
+      # Context for rdoc.rb.erb.
       class RDocTemplate
         extend ERB::DefMethod
         def_erb_method 'render', TEMPLATE_FILE
 
         def initialize
           @assertion_names = Matcher.all.map do |matcher|
-            matcher.assertions.map { |assertion| assertion.name }
+            matcher.assertions.map(&:name)
           end.flatten
         end
       end
