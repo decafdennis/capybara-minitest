@@ -2,5 +2,11 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'codeclimate-test-reporter', group: :test, require: false
-gem 'coveralls', require: false
+group :development do
+  gem 'rubocop', require: false
+end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: false
+  gem 'coveralls', require: false
+end
