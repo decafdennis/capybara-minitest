@@ -9,12 +9,11 @@ Gem::Specification.new do |s|
   s.description = "Provides assertions for minitest based on Capybara's RSpec matchers."
   s.license     = 'MIT'
 
-  s.author      = 'Dennis Stevense'
-  s.homepage    = 'https://github.com/decafdennis/capybara-minitest'
+  s.author   = 'Dennis Stevense'
+  s.homepage = 'https://github.com/decafdennis/capybara-minitest'
 
-  s.files = Dir['{lib,test}/**/*']
-  s.test_files = Dir['test/**/*']
-  s.require_paths = ['lib']
+  s.files        = Dir['lib/**/*', 'LICENSE.txt', 'README.md']
+  s.require_path = ['lib']
 
   s.add_dependency 'capybara', '~> 2.4'
 
