@@ -1,6 +1,8 @@
 Capybara::Minitest
 ==================
 
+[![Gem Version](https://badge.fury.io/rb/capybara-minitest.svg)](http://badge.fury.io/rb/capybara-minitest)
+
 If you're using `Minitest::Test` with the `Capybara::DSL` for your tests, this
 gem will allow you to do:
 
