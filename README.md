@@ -8,6 +8,8 @@ Capybara::Minitest
 [![Coverage Status](https://coveralls.io/repos/decafdennis/capybara-minitest/badge.png)](https://coveralls.io/r/decafdennis/capybara-minitest)
 [![Inline docs](http://inch-ci.org/github/decafdennis/capybara-minitest.svg?branch=master)](http://inch-ci.org/github/decafdennis/capybara-minitest)
 
+**Note:** the 0.9.0 and 0.9.1 gems were broken, make sure to update to 0.9.2 using `$ gem install capybara-minitest`.
+
 If you're using `Minitest::Test` with the `Capybara::DSL` for your tests, this
 gem will allow you to do:
 
