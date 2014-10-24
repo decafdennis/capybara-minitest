@@ -1,12 +1,12 @@
-if ENV['SIMPLECOV']
+unless ENV['SIMPLECOV'].nil?
   require 'simplecov'
   SimpleCov.start
 end
 
-if ENV['JENKINS_URL']
+unless ENV['CODECLIMATE_REPO_TOKEN'].nil?
   require 'codeclimate-test-reporter'
   CodeClimate::TestReporter.start
-
-  require 'coveralls'
-  Coveralls.wear!
 end
+
+require 'coveralls'
+Coveralls.wear! if Coveralls.will_run?
