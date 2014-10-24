@@ -11,16 +11,7 @@ module Capybara
       Matcher.all.each do |matcher|
         matcher.assertions.each do |assertion|
           define_method assertion.name do |*args|
-            # We typically get a minimum of 2 arguments: the test subject and
-            # some test value. Sometimes that is followed by a hash of options.
-            # Assume if the last argument is a string, then it's a custom
-            # message.
-            if args.length > 2 && args.last.is_a?(String)
-              custom_message = args.pop
-            else
-              custom_message = nil
-            end
-
+            custom_message = Assertions.extract_custom_message!(args)
             test_result, failure_message = assertion.test(*args)
 
             begin
@@ -36,6 +27,15 @@ module Capybara
             end
           end
         end
+      end
+
+      # Removes and returns the custom message from the given arguments.
+      def self.extract_custom_message!(args)
+        # We typically get a minimum of 2 arguments: the test subject and
+        # some test value. Sometimes that is followed by a hash of options.
+        # Assume if the last argument is a string, then it's a custom
+        # message.
+        args.length > 2 && args.last.is_a?(String) ? args.pop : nil
       end
     end
   end
