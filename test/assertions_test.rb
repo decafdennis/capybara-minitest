@@ -9,6 +9,10 @@ class AssertionsTest < Minitest::Test
   def test_assertions
     visit '/'
     assert_has_text page, 'Hello World'
+  end
+
+  def test_refutations
+    visit '/'
     refute_has_text page, 'Bye World'
   end
 
