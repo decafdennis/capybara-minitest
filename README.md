@@ -4,6 +4,7 @@ Capybara::Minitest
 [![Gem Version](https://badge.fury.io/rb/capybara-minitest.svg)](http://badge.fury.io/rb/capybara-minitest)
 [![Dependency Status](https://gemnasium.com/decafdennis/capybara-minitest.svg)](https://gemnasium.com/decafdennis/capybara-minitest)
 [![Build Status](https://travis-ci.org/decafdennis/capybara-minitest.svg?branch=master)](https://travis-ci.org/decafdennis/capybara-minitest)
+[![Codeship](https://codeship.com/projects/3b230e80-6364-0132-8dde-2ea746d4c0f5/status?branch=master)](https://codeship.com/projects/52303)
 [![Code Climate](https://codeclimate.com/github/decafdennis/capybara-minitest/badges/gpa.svg)](https://codeclimate.com/github/decafdennis/capybara-minitest)
 [![Coverage Status](https://coveralls.io/repos/decafdennis/capybara-minitest/badge.png)](https://coveralls.io/r/decafdennis/capybara-minitest)
 [![Inline docs](http://inch-ci.org/github/decafdennis/capybara-minitest.svg?branch=master)](http://inch-ci.org/github/decafdennis/capybara-minitest)
